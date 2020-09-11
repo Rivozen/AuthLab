@@ -5,27 +5,31 @@ namespace Auth
     {
         static void Main(string[] args)
         {
+            // Создание объекта
             Password password = new Password();
             Console.WriteLine("Welcome back %username%\nPlease, enter the password:");
+            // Запуск объекта
             password.verifyProcess();
             Console.ReadKey();
         }
     }
     class Password
     {
-        public string correctPassword = "HelloWorld";
-        public string userPassword;
-        protected int failures = 0;
-
+        private string correctPassword = "HelloWorld";
+        private string userPassword;
+        private int failures = 0;
+        // Метод для запуска методов
         public void verifyProcess()
         {
             getPassword();
             comparePassword();
         }
+        // Ввод пароля пользователем
         void getPassword()
         {
             userPassword = Console.ReadLine();
         }
+        // Сравнение пароля пользователя с паролем в базе
         void comparePassword()
         {
             if (correctPassword == userPassword)
@@ -37,10 +41,12 @@ namespace Auth
                 passwordNotCorrect();
             }    
         }
+        // Результат если пароли совпадают
         void passwordIsCorrect()
         {
             Console.WriteLine("Password is correct. The Vault code is 0451. Have a good day, goodbye");
         }
+        // Результат если пароли не совпадают
         void passwordNotCorrect()
         {
             failures++;

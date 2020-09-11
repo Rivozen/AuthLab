@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Auth
 {
-    class IO
+    class Auth
     {
         static void Main(string[] args)
         {
